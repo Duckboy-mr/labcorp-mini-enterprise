@@ -1,7 +1,7 @@
 # Runbook: Building DC01 (Domain Controller)
 
 **Date:** July 17, 2026
-**Author:** [Duckboy-mr]
+**Author:** Duckboy-mr
 
 ## Objective
 Stand up a Windows Server 2022 domain controller for the labcorp.local domain.
