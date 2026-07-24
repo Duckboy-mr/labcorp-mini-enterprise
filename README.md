@@ -56,10 +56,10 @@ TEMP-THE SS WILL BE ADDED-
 ![GPO](screenshots/gpo-management.png)
 
 **Splunk Security Dashboard**
-![Splunk](screenshots/splunk-failed-login-dashboard.png)
+![Splunk](screenshots/splunk-failed-login-dashboard.PNG)
 
 **Event Log Analysis**
 ![Event Viewer](screenshots/event-viewer.png)
 
 **Domain Controller Health Check**
-![dcdiag](screenshots/dc01-dcdiag-output.png)
+![dcdiag](screenshots/dc01-dcdiag-output.PNG)
