@@ -39,17 +39,3 @@ A fully virtualized enterprise environment demonstrating identity management, ne
 **Troubleshooting & Root Cause Analysis**
 - Investigated and isolated a Group Policy drive-mapping failure to a logon-time network race condition
 - Resolved NTFS permission inheritance conflicts using systematic layer-by-layer verification (`dcdiag`, `gpresult`, Event Viewer)
-
-## Screenshots
-
-**Active Directory OU Structure**
-![AD OUs](screenshots/ad-ou-structure.png)
-
-**Group Policy Management**
-![GPO](screenshots/gpo-management.png)
-
-**Splunk Security Dashboard**
-![Splunk](screenshots/splunk-dashboard.png)
-
-**Event Log Analysis**
-![Event Viewer](screenshots/event-viewer.png)
