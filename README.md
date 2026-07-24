@@ -4,13 +4,15 @@ A fully virtualized enterprise environment demonstrating identity management, ne
 
 ## Components
 
-| Host | Role | IP Address |
-|------|------|------------|
-| DC01 | Domain Controller / DNS Server | 192.168.56.10 |
-| PC01 | Domain-Joined Client Workstation | 192.168.56.20 |
-| SPL01 | Splunk Enterprise SIEM | 192.168.56.30 |
+| Host | Role | OS | IP Address |
+|------|------|-----|------------|
+| DC01 | Domain Controller / DNS Server | Windows Server 2022 | 192.168.56.10 |
+| PC01 | Domain-Member Workstation | Windows Server 2022 (Desktop Experience) | 192.168.56.20 |
+| SPL01 | Splunk Enterprise SIEM | Ubuntu Server | 192.168.56.30 |
 
 **Network:** VirtualBox Host-Only Network (192.168.56.0/24)
+
+*Note: PC01 was originally planned as Windows 10 but substituted with Windows Server 2022 Desktop Experience configured strictly as a domain member — no server roles installed, not promoted to a DC. Functionally equivalent for AD/GPO testing purposes.*
 
 ## Documentation
 
@@ -26,10 +28,10 @@ A fully virtualized enterprise environment demonstrating identity management, ne
 
 **Identity & Access Management**
 - Designed and administered a multi-OU Active Directory domain (`labcorp.local`) with role-based security groups
-- Configured and enforced Group Policy Objects for password complexity, USB device restrictions, and drive mappings
+- Configured and enforced Group Policy Objects for password complexity, USB device restrictions, and user environment standardization
 
 **Network Services**
-- Deployed DNS and DHCP services on Windows Server 2022
+- Deployed DNS services on Windows Server 2022
 - Managed static IP allocation and name resolution for all infrastructure nodes
 
 **Security Operations**
@@ -37,5 +39,27 @@ A fully virtualized enterprise environment demonstrating identity management, ne
 - Created detection dashboards visualizing failed authentication attempts (Event ID 4625)
 
 **Troubleshooting & Root Cause Analysis**
-- Investigated and isolated a Group Policy drive-mapping failure to a logon-time network race condition
+- Investigated and root-caused a Group Policy drive-mapping failure to a logon-time network race condition (Error 0x80070035); authored a comprehensive diagnostic write-up documenting the attempted remediation and the architectural limitation
 - Resolved NTFS permission inheritance conflicts using systematic layer-by-layer verification (`dcdiag`, `gpresult`, Event Viewer)
+
+## Screenshots
+TEMP-THE SS WILL BE ADDED-
+## Screenshots
+
+**Network Topology**
+![Network Topology](screenshots/network-topology.png)
+
+**Active Directory OU Structure**
+![AD OUs](screenshots/dc01-aduc-users.png)
+
+**Group Policy Management**
+![GPO](screenshots/gpo-management.png)
+
+**Splunk Security Dashboard**
+![Splunk](screenshots/splunk-failed-login-dashboard.png)
+
+**Event Log Analysis**
+![Event Viewer](screenshots/event-viewer.png)
+
+**Domain Controller Health Check**
+![dcdiag](screenshots/dc01-dcdiag-output.png)
